@@ -1,0 +1,17 @@
+
+mysample <- mysample[!is.na(mysample$Motive) , ]
+dim(mysample)
+
+YearFirstKill <- mysample[ ,"AgeFirstKill"] + mysample[ ,"YearBorn"]
+mysample$YearFirstKill <- YearFirstKill
+
+mysample <- mysample[mysample$YearFirstKill > 1900, ]
+dim(sample)
+dim(mysample)
+
+CareerDuration <- mysample[ ,"AgeLastKill"] - mysample[ ,"AgeFirstKill"]
+mysample$CareerDuration <- CareerDuration
+
+mysample <- mysample[mysample$CareerDuration > -1, ]
+
+max(mysample$CareerDuration)
